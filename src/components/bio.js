@@ -1,14 +1,8 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-
+import Image from "gatsby-image";
+import { IconContext } from "react-icons";
+import { FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
 import { rhythm } from "../utils/typography"
 
 const Bio = () => {
@@ -25,7 +19,9 @@ const Bio = () => {
         siteMetadata {
           author
           social {
-            twitter
+						twitter,
+						instagram,
+						github
           }
         }
       }
@@ -54,11 +50,25 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author}</strong> who lives and works The Bronx.
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          Twitter
-        </a>
+				Written by <strong>{author}</strong>. I'm a Self taught Developer who has done Game Programming then pivoted to Web Development using powerful frameworks/libraries such as Angular and React. I approach everyday as a chance to improve my programming skills, to learn new frameworks, and to challenge myself.
+				<br />
+				<a href={`https://twitter.com/${social.twitter}`}>
+					<IconContext.Provider value={{color: "black", size: "2em"}}>
+						<FaTwitter />
+					</IconContext.Provider>
+				</a>
+				{" "}
+				<a href={`https://instagram.com/${social.instagram}`}>
+					<IconContext.Provider value={{color: "black", size: "2em"}}>
+						<FaInstagram />
+					</IconContext.Provider>
+				</a>
+				{" "}
+				<a href={`https://github.com/${social.github}`}>
+					<IconContext.Provider value={{color: "black", size: "2em"}}>
+						<FaGithub />
+					</IconContext.Provider>
+				</a>
       </p>
     </div>
   )

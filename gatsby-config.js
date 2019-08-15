@@ -5,7 +5,9 @@ module.exports = {
 		description: `A personal tech blog to cover ideas, libraries, and/or techniques not being used or implemented.`,
 		siteUrl: `http://localhost:8080`,
     social: {
-      twitter: `joselevelsup`,
+			twitter: `joselevelsup`,
+			instagram: `joselevelsup`,
+			github: `joselevelsup`
     },
   },
   plugins: [
@@ -63,7 +65,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/blog-icon-fav-white.png`,
       },
     },
     `gatsby-plugin-offline`,
