@@ -6,7 +6,7 @@ description: Well there are so many editors but...which one is for you?
 
 ## The whole editing world
 
-Ah...the world of editing code. There are so many out there. So many to choose one. So many to stick with...which is what I struggled with. It's a really tough world out there or if you are simple person, its an easy world. In my case, it's sometimes hell. 
+Ah...the world of editing code. There are so many out there. So many to choose from. So many to stick with...which is what I struggled with. It's a really tough world out there or if you are simple person, its an easy world. In my case, it's sometimes hell. 
 
 Now as a programmer, I always  choose different editors. Let me grow through a list of editors and my experience with them. At the end of the section, I will list  my rating for it. NOW before I  continue, this is MY opinion built  off of MY experiences. So please take this with a grain of salt...or pepper...or some adobo. 
 
@@ -14,27 +14,28 @@ Now as a programmer, I always  choose different editors. Let me grow through a l
 
 ![Notepad++](https://upload.wikimedia.org/wikipedia/commons/0/0f/Notepad%2B%2B_Logo.png)
 
-This was my first editor and one that still lingers in my heart. During my  college years, this was my editor to go  with when developing sites or even doing the most simple editing of source code. Its really simple and nothing crazy. It does have syntax highlighting for most languages out there. Super simple and gets the work done. 
+This was my first editor and one that still lingers in my heart. During my  college years, this was my editor to go  with when developing sites or even doing the most simple editing of source code. Its really simple, does suntax highlighting for most languages out there, has themes available (which I should have done while using it), and you can use plugins. Easy to use and gets the work done. 
 
 ![code-image](https://draculatheme.com/assets/img/screenshots/notepad-plus-plus.png)
 
-Of course you can apply themes (At the time, I didn't. Probably should have though), It does support multiple syntax, you can install plugins, and so much more. Take a look at their [features](https://notepad-plus-plus.org/features/).
+They have a bunch of [features](https://notepad-plus-plus.org/features/) available but you can take a look for yourself.
 
-Rating: 6/10
+####Rating: 6/10
 
 ###2. Atom
 
+
 ![atom-logo](https://user-images.githubusercontent.com/378023/49132477-f4b77680-f31f-11e8-8357-ac6491761c6c.png)
 
-The Atom editor...The glorius RAM eater, slow starting, and yet beautiful editor. How I loved thee...Oh sorry. As I was saying, the Atom editor was my second editor of choice. I picked up this beauty when I heard Github had made it's own text editor. I was like "I have to try it.". I did. It was amazing at first. The UI was cool, plugins were amazing (and written in Javascript!), and  my editing had improved by learning some simple commands and/or keystrokes. 
+The Atom editor...The glorius RAM eater, slow starting, but yet beautiful editor. How I loved thee...Oh sorry. As I was saying, the Atom editor was my second editor of choice. I picked up this beauty when I heard Github had made it's own text editor. I was like "I have to try it". I did. It was amazing at first. The UI was cool, plugins were amazing (and written in Javascript!), and  my editing had improved by learning some simple commands and/or keystrokes. 
 
 ![atom-colo-edit](https://www.fossmint.com/wp-content/uploads/2017/07/Atom-Text-Editor-for-Linux.png)
 
-I'm telling you, I was in love. I used this bad  boy for about 1.5 years. The plugins were the best part though. There was literally a plugin for everything I could think of. Don't get me started  on the themes available. I was always switching my theme. Always. I think I was using a new theme each week then after I went through  the list  of installed themes, I circled back. But then one day, it hit me. The very slow startups, the amount of RAM it was eating, and the amount of processing power being  consumed. Everything was  starting to slow down. Mind you, at the time, my current laptop didn't have the best specs (15.6 in screen, 1366x768 resolution, 4GB RAM, Intel Celeron processor, and Intel HD Graphics). But Atom did it's work.
+I'm telling you, I was in love...(until I met my future wife). I used this bad  boy for about 1.5 years. The plugins were the best part though. There was literally a plugin for everything I could think of. Don't get me started  on the themes available. I was always switching my theme. Always. I think I was using a new theme each week then after I went through  the list  of installed themes, I circled back. But then one day, it hit me. The very slow startups, the amount of RAM it was eating, and the amount of processing power being  consumed. Everything was  starting to slow down. Mind you, at the time, my current laptop didn't have the best specs (15.6 in screen, 1366x768 resolution, 4GB RAM, Intel Celeron processor, and Intel HD Graphics). But Atom did it's work.
 
 Now I know there are improvements that have been made to the editor regarding speed and performance so don't take this critique to heart. I don't mean to bash it so much. Atom is a good text editor. I have gone back to it every now  and then to see the improvements then use it for a little test drive but I have moved away from it for sure. I suggest you check it out your self. Click [here](https://atom.io) for their site.
 
-Rating: 8.5/10
+####Rating: 8.5/10
 
 ###3. Visual Studio Code
 
@@ -44,9 +45,9 @@ This is one good editor that I enjoyed using. Similar  to Atom, it was a little 
 
 ![vs-code-edit](https://webdesign.vdlz.xyz/Editor/VSCode/Doc/Images017/020-001_javascript_javascript_find_all_references.png)
 
-My Time using it was fun and I loved the plugins and themes. So many cool themes. But for some reason, I still felt a little slow. Now at  this time, it wasn't my machine (I had just got my gaming laptop so specs were up there) but the GUI itself. Startup still felt slow (especially when executing from my terminal) and the file explorer was always ugly to me (although you can now tweak it to have nicer icons). Overall, coding in this puppy felt good. Now most starting developers use VSCode or Atom. Most likely VSCode than Atom but that's another argument. 
+My time using it was fun and I loved the plugins and themes. So many cool themes. But for some reason, I still felt a little slow. Now at  this time, it wasn't my machine (I had just got my gaming laptop so specs were up there) but the GUI itself. Startup still felt slow (especially when executing from my terminal) and the file explorer was always ugly to me (although you can now tweak it to have nicer icons). Overall, coding in this puppy felt good. Now most starting developers use VSCode or Atom. Most likely VSCode than Atom but that's another argument. 
 
-Rating: 8.7/10
+####Rating: 8.7/10
 
 ###4. Vim
 
@@ -62,11 +63,11 @@ Now  before  all the Vim users start to throw chairs at me, allow me to explain.
 
 ![doom-emacs](https://raw.githubusercontent.com/hlissner/doom-emacs/screenshots/main.png)
 
-Doom Emacs had the Cacodemon from Doom as their mascot and I absolutely love Doom (Before the 2016 version. Like old school Doom...even though I am not  that old.). So I thought, why not give it a shot. I followed the steps to set it up (which was quick and painless. Just needed Emacs installed) and I was in buisness. Every plugin was installed for me and I was good to go. This was  the time I was introduced into Modal Editing (which vim does). Now Emacs is NOT like Vim and Vim is NOT like Emacs but someone made a plugin called Evil Mode that allows you to perform Vim commands in Emacs to use Emacs' powers. Again, I gave up quickly on Vim but decided to give this a shot (Minnd you for my projects, I still had to use VSCode until I was comfortable). Overall, it wasn't half bad. Yeah, I messed up here and there by accidentally performing the wrong keystrokes but all in all...it was worth it. 
+Doom Emacs had the Cacodemon from Doom as their mascot and I absolutely love Doom (Before the 2016 version. Like old school Doom...even though I am not  that old.). So I thought, why not give it a shot. I followed the steps to set it up (which was quick and painless. Just needed Emacs installed) and I was in business. Every plugin was installed for me and I was good to go. This was  the time I was introduced into Modal Editing (which vim does). Now Emacs is NOT like Vim and Vim is NOT like Emacs but someone made a plugin called Evil Mode that allows you to perform Vim commands in Emacs to use Emacs' powers. Again, I gave up quickly on Vim but decided to give this a shot (Mind you for my projects, I still had to use VSCode until I was comfortable). Overall, it wasn't half bad. Yeah, I messed up here and there by accidentally performing the wrong keystrokes but all in all...it was worth it. 
 
 I was learning my way through this but I still wasn't that comfortable and after a while, I kinda got annoyed. So I gave up and went crying  to VSCode. Now I'm not saying it's bad, I'm just saying that there is a learning curve and it takes time to get adjusted but I was very impatient so I gave up. It is a really dope Distro though and I did go back to it when  I had the patience. Like coding was fine and fast, I still had to setup some language servers and add the syntax highlighting plugins, and bless Org Mode. By far, one of the greatest modes I ever used. I suggest you try it out and fight with hell hahahahaha!!!! I don't mean literal hell...it was a Doom reference cause the Cacodemon...never mind. Moving on!
 
-Rating: 8.5/10
+####Rating: 8.5/10
 
 ####B. Spacemacs
 
@@ -76,7 +77,7 @@ Now this distro...oh this distro, I have to say is one of my all time favorites.
 
 This was a whole lot smoother compared to Doom Emacs. The menu was  much easier to memorize (Doom Emacs had a menu too) and it felt oh so smoother. The Leader Key (or main key to start a command) was the space bar (hehe...see  what they did there?). So every command I executed  on the keyboard was by using the space then 1 or 2 other keyboard strokes. For instance Space-p-p helped me open a project or Space-b-n moved me to the next buffer and so forth. Programming in this puppy was amazing. No intellisense but it still worked faster and smoother than the other editors. Believe me. It just took a while to configure but hey, all worth it. Now I used Spacemacs mostly in the terminal when I should have been using the GUI but I was trying to move away from the GUI. I was tired of it. So Spacemacs came to play. After a while, I switched to Spacemacs and made it my primary editor. To be honest, I did use the GUI sometimes but I still prefered the Terminal. 
 
-Rating: 9.2/10
+####Rating: 9.2/10
 
 Now the Emacs distros are not  all bad and I am pretty sure there are more. Overall, I prefered these two and liked them (especially Spacemacs). But we are not done yet. We still have one more to go. 
 
@@ -94,7 +95,7 @@ Here are the great gigs about Neovim/Vim, I found Intellisense! Oh yes, I found 
 
 Oh did I mention I ditched the GUI in favor of the terminal? Oh yeah, I did. I would advise everyone do the same. The minimalistic lifestyle  is lit guys. 
 
-Rating: 9.5/10
+####Rating: 9.5/10
 
 ###The End?
 Now that we have reached  the end, there are a couple of things I want you take away from this post:
