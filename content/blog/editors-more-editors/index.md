@@ -1,6 +1,6 @@
 ---
 title: Editors, Editors, and more Editors
-date: ""
+date: "2019-08-17T20:52:19.207Z"
 description: Well there are so many editors but...which one is for you?
 ---
 
