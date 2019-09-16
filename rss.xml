@@ -1,4 +1,139 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Program It Forward]]></title><description><![CDATA[A personal tech blog to cover ideas, libraries, and/or techniques not being used or implemented.]]></description><link>http://localhost:8080</link><generator>RSS for Node</generator><lastBuildDate>Tue, 27 Aug 2019 02:38:05 GMT</lastBuildDate><item><title><![CDATA[Gitting Gud with Git]]></title><description><![CDATA[The Git World and You Git is a  tool that is used by mostly everyone. As a programmer, you must have used git at least once or twice…or ten…]]></description><link>http://localhost:8080/gitting-gud/</link><guid isPermaLink="false">http://localhost:8080/gitting-gud/</guid><pubDate>Tue, 27 Aug 2019 02:36:23 GMT</pubDate><content:encoded>&lt;h1&gt;The Git World and You&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Program It Forward]]></title><description><![CDATA[A personal tech blog to cover ideas, libraries, and/or techniques not being used or implemented.]]></description><link>http://localhost:8080</link><generator>RSS for Node</generator><lastBuildDate>Mon, 16 Sep 2019 01:34:01 GMT</lastBuildDate><item><title><![CDATA[Neovim Setup]]></title><description><![CDATA[The Setup Previously, I had spoken about my adventures of going through different code editors and how it brought me to my current code…]]></description><link>http://localhost:8080/the-neovim-setup/</link><guid isPermaLink="false">http://localhost:8080/the-neovim-setup/</guid><pubDate>Mon, 16 Sep 2019 01:31:50 GMT</pubDate><content:encoded>&lt;h1&gt;The Setup&lt;/h1&gt;
+&lt;p&gt;Previously, I had spoken about my adventures of going through different code editors and how it brought me to my current code editor, Neovim. Well today, I’m just going to show you what I use, what it looks like (at the current time of posting this), and how exactly do I get work done. &lt;/p&gt;
+&lt;h3&gt;Theme&lt;/h3&gt;
+&lt;p&gt;First things first, my color scheme. It’s called &lt;code class=&quot;language-text&quot;&gt;gotham256&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/programitforward/static/8729f085e9d75674a858959ac5198828/ff418/simple.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.55662073097664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAy0lEQVQoz9WT2QrCMBBF89xmb7q6FOtLXaiC4P//2XXSolStaIsIPlwmJDNnbsiERekceVnBzUroJIeKM0hHilJw7RCqqI1D8mfCxNg3ZzSHE7a7I5jJlgQqoOOcIBmETSBJyvl1/Bboo3ZUS7mKIgEXkATznULTAfq6Fj6C+2eBsgikBTcJWNhu2i5hwM0nDm/Xp5sxTq74i+5jdAecAvgN0PwNkH8DSBI2pbGR9mn2Jkno1hiLqhrK/xCy64d7tOhlhStgVjXceoMLRRMetADmy5wAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;simple_screenshot&quot;
+        title=&quot;simple_screenshot&quot;
+        src=&quot;/programitforward/static/8729f085e9d75674a858959ac5198828/b9e4f/simple.png&quot;
+        srcset=&quot;/programitforward/static/8729f085e9d75674a858959ac5198828/cf440/simple.png 148w,
+/programitforward/static/8729f085e9d75674a858959ac5198828/d2d38/simple.png 295w,
+/programitforward/static/8729f085e9d75674a858959ac5198828/b9e4f/simple.png 590w,
+/programitforward/static/8729f085e9d75674a858959ac5198828/f9b6a/simple.png 885w,
+/programitforward/static/8729f085e9d75674a858959ac5198828/2d849/simple.png 1180w,
+/programitforward/static/8729f085e9d75674a858959ac5198828/ff418/simple.png 3338w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Honestly, I like it. Nice and clean, nothing crazy. I really prefer to use  this theme cause it goes well with the syntax highlighting. I can be very picky especially when it comes to Typescript, Javascript, CSS, or even JSX. &lt;/p&gt;
+&lt;h3&gt;Plugins&lt;/h3&gt;
+&lt;p&gt;As for plugins, I use this list with &lt;a href=&quot;https://github.com/junegunn/vim-plug&quot;&gt;vim-plug&lt;/a&gt; as my plugin manager. Now I think I have a lot of plugins but please don’t judge. It makes my Neovim setup feel soooooo good when I program. &lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/programitforward/static/a418baf57d817a6e63a4f0320a702e3c/3b243/plugins.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 128.515625%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAACXBIWXMAABYlAAAWJQFJUiTwAAACpElEQVRIx41VW7uiMAzkeY9AKUXkVu6int3///Oyk7R4XJWVh3xF1GGSmQxBUlhKK0unfqJiPJPJCzokBpXRQWdyfsUpHZTZVUE5Xihre9JtR2YYSdcNqcaSwhkX1R3wuX5Fmr58ybW/H9TzlY79SKprSQ89qZbPgZRtSaVHUmVNIc4wzSk+lXIv1EcyVUtZ3ZJBZU1PGTrTGgyb842ybqCk7ymdJtJyjsIw9C3fW3q4jgAcaQce4WEhvgul5eGMlh0jBkvAMEH7ylppOS4rCk3+tu13FbTXP3QcwGwcKJ0nYccl7TNLgO0VREQp+plM01KMPydgGWNmqnLChNlJfrSqvEftwF5/Uz7OlJ5nyq6LCGIWjOF2kQe8gHBrHxnaTtSV2YGpzBJgYZY7azBI5Oe0gm6wDezlWxhqnh3PEJV0HcXcNuYXww5sG36QwgM+MqymCxh6/60qMyAUFts8W2YPIBs7gcq66wVMj45tXNU/rcY7W26Wm1s9bxsWRQps+TzAuO/ZMOi7Xb4b27p27bp61hVYRsfC2eYftito+iwKbDOxbRy71IujAR7lpSgtu2z8iZI02mLojN2JsVVtXdIAKOEgqFww8CzZ8CxUhPu8x+EWIK/eaTqTBkMDczNDNrZ4EtaRbYHaL+JstVxghsyQw4Hnx37jWfIZAYznJwZ/UXWDYbPA2MNMCcJAZgfLsOKyyw8p87rLG4BibJ4h5vSjslu9aH0d+B/vCoeKE7sbhZGYenB+5M8S/w/xvoL+DziwaJkTWwFMcpANvYYDW0WvVtn3snKiYJfjxr+cUMxS7IGWXWrX93l+zkMYm3dZ0ga2McssDFnh1cSrZXa17FavlzXTPg8TnzzM8rHVXQzTqqPMDlRMC5X8OjVg5dds2zLb9RfQL4Th2xcHqAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;plugin_list&quot;
+        title=&quot;plugin_list&quot;
+        src=&quot;/programitforward/static/a418baf57d817a6e63a4f0320a702e3c/b9e4f/plugins.png&quot;
+        srcset=&quot;/programitforward/static/a418baf57d817a6e63a4f0320a702e3c/cf440/plugins.png 148w,
+/programitforward/static/a418baf57d817a6e63a4f0320a702e3c/d2d38/plugins.png 295w,
+/programitforward/static/a418baf57d817a6e63a4f0320a702e3c/b9e4f/plugins.png 590w,
+/programitforward/static/a418baf57d817a6e63a4f0320a702e3c/f9b6a/plugins.png 885w,
+/programitforward/static/a418baf57d817a6e63a4f0320a702e3c/3b243/plugins.png 1024w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;The Keyboard&lt;/h3&gt;
+&lt;p&gt;So I have actually challenged myself to use the actual keybindings of Vim. Meaning…no arrow keys. Yupp, I made sure to turn off the arrow keys and just use HJKL. I’ve already become accustomed to the bindings that I don’t really adjust it as much. &lt;/p&gt;
+&lt;h3&gt;Location&lt;/h3&gt;
+&lt;p&gt;The sub title might be a little wierd and misleading but what I mean is where in my computer do I use Neovim. Do I use it in a Terminal or a GUI? I use Terminal all day, every day. Literally. I do everything in my terminal so whats the point of doing my programming in the GUI. &lt;/p&gt;
+&lt;p&gt;Here is my entire setup. Since I’m on a Mac (No I am not a Apple fan boy. More of a Linux but stuck with Mac), I use iTerm2, Tmux, and Neovim. Screenshot as proof. &lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/programitforward/static/e28e129300c441798b34762a844d8dec/82b63/editor.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 62.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABXklEQVQ4y62T2XKCQBBFeUviMgizMQwKikuUpCqWlf//tJvuYVGML7HycKqbHvr2MhD5zR52tYH2JaRbQeblCDViBeUrmHILvaxhGL8mKL+okNUHRNJkSI1DoixEajBP9MBssOoaW6iWRN35EsIUiJTzSOwVQcIhmcX/AuXElgVthlg7LHQWYD9WWYvu4XN3E3PBhuI3gkLlNLJugyKlCpIsJQnZjc9x9h9xtyIePeaRTVEidUuiaMc2ORYdie187tC4IR667bruz7jjlC4u4jH6l0LVhx2NO+XOhwvpielStEc0ESmmQrbEz6KCDTtk5V/VnmAQnP6T4GwQpJGf6pJy3uYSrx0vxDQIppa+dNPuIuxzDO94Mk/GcX6XcjJnUOQa3ht4I5HTXxeZ3Sds3SBbv0NXe+hyD1MdoMpdeHb1EcWugV0fWjZHKIpLymnODS7fJ3xdTjgfa3xst/gBjr0/T/Maz9EAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;editor_in_charge&quot;
+        title=&quot;editor_in_charge&quot;
+        src=&quot;/programitforward/static/e28e129300c441798b34762a844d8dec/b9e4f/editor.png&quot;
+        srcset=&quot;/programitforward/static/e28e129300c441798b34762a844d8dec/cf440/editor.png 148w,
+/programitforward/static/e28e129300c441798b34762a844d8dec/d2d38/editor.png 295w,
+/programitforward/static/e28e129300c441798b34762a844d8dec/b9e4f/editor.png 590w,
+/programitforward/static/e28e129300c441798b34762a844d8dec/f9b6a/editor.png 885w,
+/programitforward/static/e28e129300c441798b34762a844d8dec/2d849/editor.png 1180w,
+/programitforward/static/e28e129300c441798b34762a844d8dec/82b63/editor.png 3360w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/programitforward/static/88b0297b18b3d66080b90853d8550a79/82b63/tmux.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 62.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAAC7ElEQVQ4yz2T2XqiWhSEeYvT3UGNM4mCGifiFJUkxhGjgIg44BCHpPP+d3VK+py+2N/abvDftaoWQq5rIdWdIfpqINI1ER3OkZo4qFgLPNkLPDsuOgsXr6ztuQvVXiLneJCMDeJ9F9GGjmilh3Ctg0j1BUJ+6qEwO0A2trizD0itLsjtfqN1+kb38xvG7y+4358YXD7xfLygur8gu7kgOj8hNN4i0DQh1ke4qfZxU36FcN8xIFFlYuRAmnnIuAeo6xMauzPq+zO04wn2F/eHE1TviMrmiOzyA7HZDmF9iVBnRqgOsdKFWKLC2PMYacLSxpqwD5Q8qvDOaBJYJaBF0PvnGY97AgkrEHY/3yFmrhHm/0IdE4HGEKLagfjQhiAPTeSmC2Sprrw+I39dBKurI5UeUd+d0D8T6J1QXn0g4+wRJyyiO7jtzRCi94E6gWw3mCcwo1tQxjbkqYucvYVMsMJVXOzxyPYfCa0dzihSWZm/c1SXmC4RHvyBBdtjejjwFQYKGj3s6UiNTKTfHSjGkuEskbHWKNlUPKenhCdMD2l7hwIveXB2kMwV1VkIamO2O/jrn5hrQcgOJ1BGFjKTBRSqlPQ5ZO5z3OfNJS9a4LZrI27skLS2kCzPVxjqXFsl7JHeFZ99/8RMA0LqjSm/ThB90RHrTiENLYY0g8xLUqwRPhObY0THG8Ss3X9BENbSEaj1fe/EAmEPTYhKDcKdpiP5Mkb8bYIYl9Sb4n5gIMka6xoIs63bJw7v0KXKrZ/q1bcAz/x0K29/2n1oUWGdg00vSu8uitMVikxPpWcF1qK1gTx2eInBr2iKkDbxZy7EvQ/8v90yYSW2nL+2/AQhTNkJ7R1Jvph8M5HgKCQ46FKfvvVniDPNJH2V+EnGeBZhDbMGW4RWewgwkJ95Db+UOn7dqRBG9RrkTBH/pMv4IV9XCTdKmYlVcFtq4K6mQWl2cF/XECs3/LNouYZoQaUiFcGsila9jR5DbA9M/AshYtH8RHW6KgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tmux_screen&quot;
+        title=&quot;tmux_screen&quot;
+        src=&quot;/programitforward/static/88b0297b18b3d66080b90853d8550a79/b9e4f/tmux.png&quot;
+        srcset=&quot;/programitforward/static/88b0297b18b3d66080b90853d8550a79/cf440/tmux.png 148w,
+/programitforward/static/88b0297b18b3d66080b90853d8550a79/d2d38/tmux.png 295w,
+/programitforward/static/88b0297b18b3d66080b90853d8550a79/b9e4f/tmux.png 590w,
+/programitforward/static/88b0297b18b3d66080b90853d8550a79/f9b6a/tmux.png 885w,
+/programitforward/static/88b0297b18b3d66080b90853d8550a79/2d849/tmux.png 1180w,
+/programitforward/static/88b0297b18b3d66080b90853d8550a79/82b63/tmux.png 3360w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;So yeah, this is my neovim editor setup. If you want a setup similar to mine, here is a link to my &lt;a href=&quot;https://gist.github.com/joselevelsup/7907041b4f7c07dc74a02bca925a5b0c&quot;&gt;init.vim&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Gitting Gud with Git]]></title><description><![CDATA[The Git World and You Git is a  tool that is used by mostly everyone. As a programmer, you must have used git at least once or twice…or ten…]]></description><link>http://localhost:8080/gitting-gud/</link><guid isPermaLink="false">http://localhost:8080/gitting-gud/</guid><pubDate>Tue, 27 Aug 2019 02:36:23 GMT</pubDate><content:encoded>&lt;h1&gt;The Git World and You&lt;/h1&gt;
 &lt;p&gt;Git is a  tool that is used by mostly everyone. As a programmer, you must have used git at least once or twice…or ten thousand times. Git is not even a world so that title is wrong. Its more like a  universe. We have seen some it but not all of it. If you are a pro  with git then what are you doing here? Refresher? Ok cool. Now for those who don’t know what Git is, please take a seat and relax. And for those who do know what Git is, I see you near the exit…smart. &lt;/p&gt;
 &lt;h2&gt;Version Control&lt;/h2&gt;
 &lt;p&gt;Have you ever heard of Version Control? According to the Git website, “Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later”. For example, you are working on a website and you want to incorporate 2 features. One of the features could possibly break some of your existing code but you still include it. Now things are breaking. With the use of Git, you can easily revert back to a time  when the website was just functioning fine. Or you can test these new features by just using a different branch. Same code, new features, easy to get rid of incase all does not go  well. &lt;/p&gt;
