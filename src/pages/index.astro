@@ -1,17 +1,82 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Home">
+  <!-- Hero -->
+  <section class="mb-14 pb-10 border-b" style="border-color: var(--tn-border);">
+    <p class="mb-3 text-xs" style="color: var(--tn-subtle);">
+      <span style="color: var(--tn-green);">jose@programitforward</span>
+      <span style="color: var(--tn-subtle);">:~$</span>
+      <span style="color: var(--tn-fg);"> cat about.txt</span>
+    </p>
+
+    <h1 class="mb-4 text-3xl font-bold leading-tight" style="color: var(--tn-fg);">
+      Program It <span style="color: var(--tn-blue);">Forward</span>
+    </h1>
+
+    <p class="max-w-xl text-sm leading-relaxed" style="color: var(--tn-fg-muted);">
+      A place where I share ideas about code, engineering, and whatever else is
+      living in my head. No ads, no noise — just writing.
+    </p>
+  </section>
+
+  <!-- Recent posts -->
+  <section>
+    <p class="mb-6 flex items-center gap-3 text-xs" style="color: var(--tn-subtle);">
+      <span style="color: var(--tn-green);">$</span> ls -lt ./blog
+      <span class="flex-1 border-t" style="border-color: var(--tn-border);"></span>
+    </p>
+
+    {posts.length === 0 ? (
+      <p class="text-sm" style="color: var(--tn-subtle);">No posts yet. Check back soon.</p>
+    ) : (
+      <ul class="flex flex-col gap-4 list-none p-0 m-0">
+        {posts.map((post) => {
+          const date = post.data.pubDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          });
+          return (
+            <li>
+              <a
+                href={`/blog/${post.id.replace(/\.mdx?$/, '')}`}
+                class="uk-card uk-card-body block no-underline rounded-md border p-5 transition-colors"
+                style="background-color: var(--tn-bg-light); border-color: var(--tn-border);"
+                onmouseover="this.style.borderColor='var(--tn-blue)'"
+                onmouseout="this.style.borderColor='var(--tn-border)'"
+              >
+                <div class="mb-1 flex items-center gap-3">
+                  <span class="text-xs" style="color: var(--tn-subtle);">{date}</span>
+                  {post.data.tags && post.data.tags.slice(0, 3).map((tag: string) => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+                <h2 class="mb-1 text-base font-bold" style="color: var(--tn-fg);">
+                  {post.data.title}
+                </h2>
+                <p class="text-xs leading-relaxed" style="color: var(--tn-subtle);">
+                  {post.data.description}
+                </p>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    )}
+
+    {posts.length > 0 && (
+      <div class="mt-8">
+        <a href="/blog" class="text-xs no-underline" style="color: var(--tn-subtle);">
+          <span style="color: var(--tn-green);">→</span> view all posts
+        </a>
+      </div>
+    )}
+  </section>
+</BaseLayout>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  tags?: string[];
+}
+
+const { title, description, pubDate, tags = [] } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Back link -->
+  <a
+    href="/blog"
+    class="mb-8 inline-flex items-center gap-1 text-xs no-underline transition-colors"
+    style="color: var(--tn-subtle);"
+  >
+    <span style="color: var(--tn-green);">←</span> cd /blog
+  </a>
+
+  <!-- Post header -->
+  <header class="mb-10 pb-6 border-b" style="border-color: var(--tn-border);">
+    <h1 class="mb-3 text-2xl font-bold leading-tight" style="color: var(--tn-blue);">
+      {title}
+    </h1>
+
+    <p class="mb-4 text-sm" style="color: var(--tn-fg-muted);">{description}</p>
+
+    <div class="flex flex-wrap items-center gap-4">
+      <span class="text-xs" style="color: var(--tn-subtle);">
+        <span style="color: var(--tn-green);">pubDate:</span>
+        &nbsp;{formattedDate}
+      </span>
+
+      {tags.length > 0 && (
+        <div class="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      )}
+    </div>
+  </header>
+
+  <!-- Post body -->
+  <article class="prose">
+    <slot />
+  </article>
+</BaseLayout>

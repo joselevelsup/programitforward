@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'A blog about programming and ideas.' } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title} · programitforward</title>
+  </head>
+  <body>
+    <!-- ── Header ── -->
+    <header
+      class="sticky top-0 z-50 border-b"
+      style="background-color: var(--tn-bg-dark); border-color: var(--tn-border);"
+    >
+      <div class="mx-auto flex max-w-4xl items-center justify-between px-6 py-3">
+        <!-- Logo / site name -->
+        <a
+          href="/"
+          class="text-sm font-bold no-underline"
+          style="color: var(--tn-green);"
+        >
+          <span style="color: var(--tn-subtle);">~/</span>programitforward
+        </a>
+
+        <!-- Navigation -->
+        <nav>
+          <ul class="flex list-none gap-6 p-0 m-0">
+            <li>
+              <a
+                href="/"
+                class="text-xs no-underline transition-colors"
+                style={pathname === '/' ? 'color: var(--tn-blue);' : 'color: var(--tn-subtle);'}
+              >
+                home
+              </a>
+            </li>
+            <li>
+              <a
+                href="/blog"
+                class="text-xs no-underline transition-colors"
+                style={pathname.startsWith('/blog') ? 'color: var(--tn-blue);' : 'color: var(--tn-subtle);'}
+              >
+                blog
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ── Page content ── -->
+    <main class="flex-1 mx-auto w-full max-w-4xl px-6 py-10">
+      <slot />
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer
+      class="border-t py-5 text-center text-xs"
+      style="background-color: var(--tn-bg-dark); border-color: var(--tn-border); color: var(--tn-subtle);"
+    >
+      <span style="color: var(--tn-green);">$</span>
+      &nbsp;programitforward &mdash; built with Astro
+    </footer>
+
+  </body>
+</html>
