@@ -112,6 +112,14 @@ body {
   overflow-x: auto;
   font-size: 0.875rem;
   font-family: 'JetBrains Mono', monospace;
+  padding: 1.25rem 1.5rem;
+}
+
+.prose pre code {
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: inherit;
 }
 
 .prose blockquote {

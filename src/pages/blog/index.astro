@@ -4,32 +4,66 @@ import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const allTags = [...new Set(posts.flatMap((p) => p.data.tags ?? []))].sort();
 ---
 
 <BaseLayout title="Blog" description="All posts on programitforward.">
   <!-- Page heading -->
-  <div class="mb-10">
+  <div class="mb-8">
     <p class="mb-3 text-xs" style="color: var(--tn-subtle);">
       <span style="color: var(--tn-green);">jose@programitforward</span>
       <span style="color: var(--tn-subtle);">:~$</span>
       <span style="color: var(--tn-fg);"> ls -lt ./blog</span>
     </p>
     <h1 class="text-2xl font-bold" style="color: var(--tn-fg);">All Posts</h1>
-    <p class="mt-1 text-xs" style="color: var(--tn-subtle);">{posts.length} post{posts.length !== 1 ? 's' : ''}</p>
+    <p id="post-count" class="mt-1 text-xs" style="color: var(--tn-subtle);">
+      {posts.length} post{posts.length !== 1 ? 's' : ''}
+    </p>
   </div>
 
+  <!-- Tag filter -->
+  {allTags.length > 0 && (
+    <div class="mb-8">
+      <p class="mb-3 text-xs" style="color: var(--tn-subtle);">
+        <span style="color: var(--tn-green);">#</span> filter by tag
+      </p>
+      <div class="flex flex-wrap gap-2 items-center">
+        {allTags.map((tag) => (
+          <button
+            class="tag-filter-btn tag cursor-pointer border transition-colors"
+            data-tag={tag}
+            style="color: var(--tn-subtle); border-color: var(--tn-border); background-color: var(--tn-bg-light);"
+            aria-pressed="false"
+          >
+            {tag}
+          </button>
+        ))}
+        <button
+          id="clear-filters"
+          class="hidden cursor-pointer rounded border px-2 py-0.5 text-xs transition-colors"
+          style="color: var(--tn-red); border-color: var(--tn-border); background: transparent;"
+        >
+          ✕ clear
+        </button>
+      </div>
+    </div>
+  )}
+
+  <!-- Post list -->
   {posts.length === 0 ? (
     <p class="text-sm" style="color: var(--tn-subtle);">Nothing here yet. Come back soon.</p>
   ) : (
-    <ul class="flex flex-col gap-4 list-none p-0 m-0">
+    <ul id="post-list" class="flex flex-col gap-4 list-none p-0 m-0">
       {posts.map((post) => {
         const date = post.data.pubDate.toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'short',
           day: 'numeric',
         });
+        const tagList = (post.data.tags ?? []).join(',');
         return (
-          <li>
+          <li data-tags={tagList}>
             <a
               href={`/blog/${post.id.replace(/\.mdx?$/, '')}`}
               class="uk-card uk-card-body block no-underline rounded-md border p-5 transition-colors"
@@ -55,4 +89,81 @@ const posts = (await getCollection('blog'))
       })}
     </ul>
   )}
+
+  <!-- No results message -->
+  <p
+    id="no-results"
+    class="hidden text-sm"
+    style="color: var(--tn-subtle);"
+  >
+    <span style="color: var(--tn-red);">0</span> posts match the selected tags.
+  </p>
 </BaseLayout>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.tag-filter-btn');
+  const postItems = document.querySelectorAll<HTMLLIElement>('#post-list li');
+  const countEl   = document.getElementById('post-count')!;
+  const clearBtn  = document.getElementById('clear-filters')!;
+  const noResults = document.getElementById('no-results')!;
+
+  const selected = new Set<string>();
+
+  function applyFilter() {
+    let visible = 0;
+
+    postItems.forEach((li) => {
+      const tags = li.dataset.tags ? li.dataset.tags.split(',') : [];
+      const show = selected.size === 0 || [...selected].some((t) => tags.includes(t));
+      li.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    // Update count text
+    const total = postItems.length;
+    if (selected.size === 0) {
+      countEl.textContent = `${total} post${total !== 1 ? 's' : ''}`;
+    } else {
+      countEl.textContent = `${visible} of ${total} post${total !== 1 ? 's' : ''}`;
+    }
+
+    // Toggle no-results message
+    noResults.classList.toggle('hidden', visible > 0);
+
+    // Show/hide clear button
+    clearBtn.classList.toggle('hidden', selected.size === 0);
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const tag = btn.dataset.tag!;
+
+      if (selected.has(tag)) {
+        selected.delete(tag);
+        btn.setAttribute('aria-pressed', 'false');
+        btn.style.color          = 'var(--tn-subtle)';
+        btn.style.borderColor    = 'var(--tn-border)';
+        btn.style.backgroundColor = 'var(--tn-bg-light)';
+      } else {
+        selected.add(tag);
+        btn.setAttribute('aria-pressed', 'true');
+        btn.style.color          = 'var(--tn-bg-dark)';
+        btn.style.borderColor    = 'var(--tn-green)';
+        btn.style.backgroundColor = 'var(--tn-green)';
+      }
+
+      applyFilter();
+    });
+  });
+
+  clearBtn.addEventListener('click', () => {
+    selected.clear();
+    filterBtns.forEach((btn) => {
+      btn.setAttribute('aria-pressed', 'false');
+      btn.style.color          = 'var(--tn-subtle)';
+      btn.style.borderColor    = 'var(--tn-border)';
+      btn.style.backgroundColor = 'var(--tn-bg-light)';
+    });
+    applyFilter();
+  });
+</script>
