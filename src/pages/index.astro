@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog'))
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 5);
 ---
@@ -16,7 +16,7 @@ const posts = (await getCollection('blog'))
       <span style="color: var(--tn-fg);"> cat about.txt</span>
     </p>
 
-    <h1 class="mb-4 text-3xl font-bold leading-tight" style="color: var(--tn-fg);">
+    <h1 class="mb-4 text-2xl font-bold leading-tight sm:text-3xl" style="color: var(--tn-fg);">
       Program It <span style="color: var(--tn-blue);">Forward</span>
     </h1>
 
@@ -52,7 +52,7 @@ const posts = (await getCollection('blog'))
                 onmouseover="this.style.borderColor='var(--tn-blue)'"
                 onmouseout="this.style.borderColor='var(--tn-border)'"
               >
-                <div class="mb-1 flex items-center gap-3">
+                <div class="mb-1 flex flex-wrap items-center gap-2">
                   <span class="text-xs" style="color: var(--tn-subtle);">{date}</span>
                   {post.data.tags && post.data.tags.slice(0, 3).map((tag: string) => (
                     <span class="tag">{tag}</span>

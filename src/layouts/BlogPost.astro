@@ -21,15 +21,15 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
   <!-- Back link -->
   <a
     href="/blog"
-    class="mb-8 inline-flex items-center gap-1 text-xs no-underline transition-colors"
+    class="mb-4 inline-flex items-center gap-1 text-xs no-underline transition-colors sm:mb-8"
     style="color: var(--tn-subtle);"
   >
     <span style="color: var(--tn-green);">←</span> cd /blog
   </a>
 
   <!-- Post header -->
-  <header class="mb-10 pb-6 border-b" style="border-color: var(--tn-border);">
-    <h1 class="mb-3 text-2xl font-bold leading-tight" style="color: var(--tn-blue);">
+  <header class="mb-6 pb-4 border-b sm:mb-10 sm:pb-6" style="border-color: var(--tn-border);">
+    <h1 class="mb-3 text-xl font-bold leading-tight sm:text-2xl" style="color: var(--tn-blue);">
       {title}
     </h1>
 
@@ -56,3 +56,4 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
     <slot />
   </article>
 </BaseLayout>
+

@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog'))
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const allTags = [...new Set(posts.flatMap((p) => p.data.tags ?? []))].sort();
@@ -16,7 +16,7 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags ?? []))].sort();
       <span style="color: var(--tn-subtle);">:~$</span>
       <span style="color: var(--tn-fg);"> ls -lt ./blog</span>
     </p>
-    <h1 class="text-2xl font-bold" style="color: var(--tn-fg);">All Posts</h1>
+    <h1 class="text-xl font-bold sm:text-2xl" style="color: var(--tn-fg);">All Posts</h1>
     <p id="post-count" class="mt-1 text-xs" style="color: var(--tn-subtle);">
       {posts.length} post{posts.length !== 1 ? 's' : ''}
     </p>
@@ -71,7 +71,7 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags ?? []))].sort();
               onmouseover="this.style.borderColor='var(--tn-blue)'"
               onmouseout="this.style.borderColor='var(--tn-border)'"
             >
-              <div class="mb-2 flex items-center gap-3">
+              <div class="mb-2 flex flex-wrap items-center gap-2">
                 <span class="text-xs" style="color: var(--tn-subtle);">{date}</span>
                 {post.data.tags && post.data.tags.slice(0, 4).map((tag: string) => (
                   <span class="tag">{tag}</span>

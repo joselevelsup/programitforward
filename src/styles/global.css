@@ -73,14 +73,14 @@ body {
   margin-bottom: 0.75rem;
 }
 
-.prose h1 { color: var(--tn-blue); font-size: 1.75rem; }
+.prose h1 { color: var(--tn-blue); font-size: clamp(1.3rem, 4vw, 1.75rem); }
 .prose h2 {
   color: var(--tn-cyan);
-  font-size: 1.35rem;
+  font-size: clamp(1.1rem, 3vw, 1.35rem);
   border-bottom: 1px solid var(--tn-border);
   padding-bottom: 0.3rem;
 }
-.prose h3 { color: var(--tn-magenta); font-size: 1.1rem; }
+.prose h3 { color: var(--tn-magenta); font-size: clamp(1rem, 2.5vw, 1.1rem); }
 .prose h4 { color: var(--tn-yellow); font-size: 1rem; }
 
 .prose p { margin-bottom: 1.2rem; }
@@ -103,6 +103,8 @@ body {
   font-size: 0.875em;
   color: var(--tn-cyan);
   font-family: 'JetBrains Mono', monospace;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .prose pre {
@@ -110,9 +112,18 @@ body {
   border-radius: 6px;
   margin: 1.5rem 0;
   overflow-x: auto;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-family: 'JetBrains Mono', monospace;
   padding: 1.25rem 1.5rem;
+  max-width: 100%;
+  word-break: normal;
+  white-space: pre;
+}
+
+@media (max-width: 639px) {
+  article.prose pre {
+    padding: 0.6rem 0.75rem;
+  }
 }
 
 .prose pre code {
@@ -148,11 +159,17 @@ body {
   border: 1px solid var(--tn-border);
 }
 
+.prose .table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+}
+
 .prose table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 1.5rem;
   font-size: 0.875rem;
+  min-width: 400px;
 }
 .prose th {
   background-color: var(--tn-bg-light);
