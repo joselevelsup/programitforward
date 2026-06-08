@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title: string;
@@ -19,8 +20,10 @@ const pathname = new URL(Astro.request.url).pathname;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title} · programitforward</title>
+    <Analytics />
   </head>
   <body>
+
     <!-- ── Header ── -->
     <header
       class="sticky top-0 z-50 border-b"
