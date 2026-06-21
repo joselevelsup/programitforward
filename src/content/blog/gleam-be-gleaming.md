@@ -1,25 +1,37 @@
 ---
 title: "Gleam be Gleaming!"
 description: "How I have been using Gleam and enjoying the shit out of it!"
-pubDate: 2026-04-11
+pubDate: 2026-06-21
 tags: ["programming", "gleam", "web"]
-draft: true
+draft: false
 ---
 
 # Gleam be Gleaming!
 
 So for quite a while now, I have been using the programming language Gleam and it has been an absolute blast. Gleam is a functional programming language that compiles to either Erlang bytecode (running on the BEAM virtual machine) or JavaScript, giving you the choice of leveraging the BEAM's powerful concurrency and fault tolerance, or running in a JavaScript runtime like Bun, Node.js, or Deno. (I prefer Bun, by the way.) Gleam also allows you to use Erlang, JavaScript, or Elixir code through interop, which is a really nice touch.
 
-I just enjoy the experience whenever I am working in it. Really! I had never worked with Option and Result types before until I met Gleam and...it has genuinely opened my eyes. Instead of null checks scattered everywhere or random runtime panics, you are forced to handle the possibility of failure right there in the type system. It sounds annoying at first but it actually makes you feel more confident about your code. The pipe operator has also been a pleasure to use. Now before you come at me, let me just say that I have only used TypeScript (and obviously JavaScript) and Go. Both are really good languages, especially Go...actually, just Go. Go is amazing (that damn handsome gopher). But now using Gleam, I get to play with a type system that actually feels fun. Before I continue to glaze Gleam, let me show you some code examples.
+I just enjoy the experience whenever I am working in it. Really! I had never worked with Option and Result types before until I met Gleam and...it has genuinely opened my eyes. Instead of null checks scattered everywhere or random runtime panics, you are forced to handle the possibility of failure right there in the type system. It sounds annoying at first but it actually makes you feel more confident about your code.
+
+The pipe operator has also been a pleasure to use. Now before you come at me, let me just say that I have only used TypeScript (and obviously JavaScript) and Go. Both are really good languages, especially Go...actually, just Go...Go is amazing (that damn handsome gopher). But now using Gleam, I get to play with a type system that actually feels fun. Before I continue to glaze Gleam, let me show you some code examples:
 
 ### Basic Hello World
+
 ```gleam
 fn main() -> Nil {
     echo "Hello World"
 }
 ```
 
+**or**
+
+```gleam
+fn main() -> Nil {
+  io.println("Hello world")
+}
+```
+
 ### Control Flow
+
 ```gleam
 fn apple_or_banana(apple: Bool, banana: Bool) -> Nil {
     case apple {
@@ -32,14 +44,16 @@ fn apple_or_banana(apple: Bool, banana: Bool) -> Nil {
 }
 ```
 
-### Returns
+### Return statements
+
 ```gleam
 fn get_in_the_club(age: Int) -> Bool {
-    age >= 21
+    age >= 21 //Returns True or False
 }
 ```
 
 ### Recursion
+
 ```gleam
 fn factorial(number: Int) -> Int {
    case number == 1 {
@@ -49,7 +63,8 @@ fn factorial(number: Int) -> Int {
 }
 ```
 
-### Pipe
+### Pipe (not like that)
+
 ```gleam
 import gleam/string
 import gleam/list
@@ -78,27 +93,26 @@ fn factorial(number) {
 }
 ```
 
-Ok, one last glaze. Gleam has a really solid standard library and it's extensible. There are packages for Crypto, JSON, HTTP, and more. For real, when you get the chance, check it out. I know there is a lot I haven't touched on, and that is intentional. This post is not supposed to be a full language tour — it's just me sharing what I have been doing with Gleam.
+Ok, one last glaze. Gleam has a really solid standard library and it's extensible. There are packages for Crypto, JSON, HTTP, and more. For real, when you get the chance, check it out. I know there is a lot I haven't touched on, and that is intentional. This post is not supposed to be a full language tour — it's just me sharing what I have been doing with Gleam. If you wanna checkout the tour though by all means ---> [tour.gleam.run](tour.gleam.run)
 
 WAIT, ONE LAST THING...The documentation! Oh, the documentation! Gleam uses HexDocs, which is the documentation platform for the BEAM ecosystem. Coming from the NPM world, this has been **chef's kiss** amazing. You get to see every function a package exposes, the types, the constants, even example usage in some cases. It's clean, fast, and actually enjoyable to browse. That alone says a lot.
 
-## What have I been doing?
+## What have I been doing with Gleam?
 
-I have been building random projects, mostly trying to figure out a good structure for a web server that is **not entirely JavaScript**. I'm just tired of everything running on JavaScript. For once, I want my server built with something else. I did try Go and it was good for a while, but I don't know — it just didn't feel like the right fit for me. I still like the language, and I even liked [templ](https://templ.guide), which lets you write HTML-like templates directly in Go. It's really good. I just wanted something simpler. Something more uniform. Something that felt consistent all the way through.
+I have been building random projects, mostly trying to figure out a good structure for a web server that is **not entirely JavaScript**. I'm just tired of everything running on JavaScript. For once, I want my server built with something else. I did try Go and it was good for a while, but I don't know — it just didn't feel like the right fit for me. I still like the language, and I even liked [templ](https://templ.guide), which lets you write HTML-like templates directly in Go. It's really good but this is mostly a skill issue when it comes to using Go and that's on me.
 
-### Well, what have you been using?
+## Well, what have you been using?
 
-Glad you asked! I have been using Mist, Wisp, Fist, Pog, and the standard library.
+Glad you asked! I have been using Mist, Wisp, Fist, Pog, Lustre and the standard library. Here is an explanation of each:
 
-- **Mist** — The core HTTP server library. Handles the low-level connection stuff so you don't have to.
-- **Wisp** — A practical Gleam web framework built for rapid development and easy maintenance. Think of it as the layer that makes building request/response flows feel natural.
-- **Fist** — A declarative, functional router. Pairs really nicely with Wisp.
-- **Pog** — A PostgreSQL client for Gleam. Clean API, works great with the rest of the stack.
+- **Mist** - The core HTTP server library. Handles the low-level connection stuff so you don't have to.
+- **Wisp** - A practical Gleam web framework built for rapid development and easy maintenance. Think of it as the layer that makes building request/response flows feel natural.
+- **Fist** - A declarative, functional router. Pairs really nicely with Wisp.
+- **Pog** - A PostgreSQL client for Gleam. Clean API, works great with the rest of the stack.
+- **Lustre** - A Gleam web framework for building HTML templates, single page applications, and real-time server components.
 
 These tools together have been helping me put together some really solid structures, and writing code with them has felt sooooo good.
 
 ## What is your goal with Gleam?
 
-I want to really get away from pure JavaScript on the server side — but that does not mean I am giving up JavaScript entirely. I still need it in the browser. So my intent is to build a multi-page application (MPA) with Gleam handling the server and AlpineJS handling the browser-side interactivity. No React, no Vue, no Solid, no Svelte (although I have heard really good things about Svelte...keeping my eye on that one). I just want clean HTML, CSS, and minimal JavaScript with a lightweight framework. Keep it simple. Keep it fun.
-
-
+I want to really get away from pure JavaScript on the server side — but that does not mean I am giving up JavaScript entirely. I still need it in the browser. So my intent is to build a multi-page application (MPA) with Gleam handling the server and AlpineJS handling the browser-side interactivity (Alpinejs doesn't require a build step). No React, no Vue, no Solid, no Svelte (although I have heard really good things about Svelte...keeping my eye on that one). I just want clean HTML, CSS, and minimal JavaScript with a lightweight framework. Keep it simple. Keep it fun.
